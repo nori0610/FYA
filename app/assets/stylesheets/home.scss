@@ -1,7 +1,7 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+//134に背景画像
 /* reset ============================= */
 * {
   box-sizing: border-box;
@@ -102,7 +102,7 @@ header {
 .header-menus a {
   float: left;
   font-size: 13px;
-  color: white;
+  color: black;
 }
 
 .header-menus .fa {
@@ -160,6 +160,65 @@ header {
   float: left;
   padding: 20px;
   font-size: 22px;
+}
+
+.category-list li a:hover {
+  color: #E48E00;
+  float: left;
+  padding: 20px;
+  font-size: 22px;
+  text-decoration: underline;
+}
+
+body {
+  background: #eee;
+}
+
+.card-design {
+  padding-left: 300px;
+  padding-top: 100px;
+}
+
+.card {
+  margin: 30px auto;
+  width: 350px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #ccc;
+  float: left;
+  margin-right: 40px;
+}
+.card-img {
+  border-radius: 5px 5px 0 0;
+  max-width: 100%;
+  height: auto;
+}
+.card-content {
+  padding: 20px;
+}
+.card-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+.card-text {
+  color: #777;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.card-link {
+  text-align: center;
+  border-top: 1px solid #eee;
+  padding: 20px;
+}
+.card-link a {
+  text-decoration: none;
+  color: #0bd;
+  margin: 0 10px;
+}
+.card-link a:hover {
+  color: #0090aa;
 }
 
 /* about =================================== */
