@@ -11,6 +11,15 @@
           <% end %>
           <p>タイトル</p>
           <input name="title"><%= @post %></input>
+          <br>
+          <form action="cgi-bin/formmail.cgi" method="post">
+          <p>カテゴリー：<br>
+          <select name="category">
+            <option value="service">社会にいいこと</option>
+            <option value="making">ものづくり</option>
+            <option value="life">生活</option>
+          </select></p>
+          <br>
           <p>本文</p>
           <textarea name="content"><%= @post.content %></textarea>
           <input type="submit" value="投稿">
