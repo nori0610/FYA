@@ -12,13 +12,15 @@
           <p>タイトル</p>
           <input name="title"><%= @post %></input>
           <br>
-          <form action="cgi-bin/formmail.cgi" method="post">
           <p>カテゴリー：<br>
-          <select name="category">
-            <option value="service">社会にいいこと</option>
-            <option value="making">ものづくり</option>
-            <option value="life">生活</option>
-          </select></p>
+          <div class="select">
+            <select>
+             <option value="service">社会にいいこと</option>
+             <option value="making">ものづくり</option>
+             <option value="life">生活</option>
+             <option value="other">その他</option>
+            </select>
+          </div>
           <br>
           <p>本文</p>
           <textarea name="content"><%= @post.content %></textarea>
