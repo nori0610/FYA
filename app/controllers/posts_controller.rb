@@ -10,6 +10,8 @@ class PostsController < ApplicationController
     @post = Post.find_by(id:params[:id])
     @user = @post.user
     @likes_count = Like.where(post_id: @post.id).count
+    @comment = Comment.new
+    @comments = @post.comments
   end
 
   def new
@@ -57,6 +59,18 @@ class PostsController < ApplicationController
       flash[:notice] = "権限がありません"
       redirect_to("/posts/index")
     end
+  end
+
+  def comment
+    @comment = Comment.new(content: params[:content], post_id:  @current_post.id, user_id: @current_user.id)
+    @comment.save
+    redirect_to :action => "show", :id => @comment.post_id
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :content, :image)
   end
 
 end

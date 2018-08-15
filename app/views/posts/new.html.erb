@@ -23,7 +23,8 @@
           </div>
           <br>
           <p>本文</p>
-          <textarea name="content"><%= @post.content %></textarea>
+          <%= f.text_area :content %>
+          <%= f.file_field :image %><br>
           <input type="submit" value="投稿">
         </div>
       </div>
