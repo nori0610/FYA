@@ -1,7 +1,7 @@
 <div class="main posts-new">
   <div class="container">
     <h1 class="form-heading">投稿する</h1>
-    <%= form_tag("/posts/create")do %>
+    <%= form_for @post do |f| %>
       <div class="form">
         <div class="form-body">
           <% @post.errors.full_messages.each do |message| %>
@@ -10,7 +10,7 @@
             </div>
           <% end %>
           <p>タイトル</p>
-          <input name="title"><%= @post %></input>
+          <%= f.text_field(:title) %>
           <br>
           <p>カテゴリー：<br>
           <div class="select">

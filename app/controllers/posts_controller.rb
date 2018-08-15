@@ -17,8 +17,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(title: params[:title], user_id: @current_user.id)
-    @post = Post.new(content: params[:content], user_id: @current_user.id)
+    @post = Post.new(post_params)
+    @post.user_id = @current_user.id
 
     if @post.save
       flash[:notice] = "投稿を作成しました"

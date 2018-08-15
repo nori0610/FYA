@@ -1,16 +1,27 @@
 <div class="main posts-index">
-  <div class="container">
+  <div class="container uk-flex uk-flex-around uk-flex-wrap-between uk-flex-wrap">
     <% @posts.each do |post| %>
-      <div class="posts-index-item">
-        <div class="post-left">
-          <img src="<%= "/user_images/#{post.user.image_name}" %>">
-        </div>
-        <div class="post-right">
-          <div class="post-user-name">
-            <%= link_to(post.user.name, "/users/#{post.user.id}") %>
+      <div class="uk-flex">
+        <div class="card uk-card uk-card-small uk-card-default">
+          <div class="uk-card-header">
+            <h3 class="uk-card-title">
+              <%= post.title %>
+            </h3>
+            <% if post.image.attached? %>
+              <div class="uk-card-media-top uk-text-center">
+                <%= image_tag url_for(post.image)%>
+              </div>
+            <% end %>
+          </div>
+          <div class="uk-hr"></div>
+          <div class="uk-card-body">
+            <%= post.content %>
+          </div>
+          <div class="uk-hr"></div>
+          <div class="uk-card-footer">
+            <%= link_to(post.content, "/posts/#{post.id}") %>
           </div>
         </div>
-        <%= link_to(post.content, "/posts/#{post.id}") %>
       </div>
     <% end %>
   </div>
