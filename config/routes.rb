@@ -22,6 +22,10 @@ Rails.application.routes.draw do
   post "posts/:id/update" => "posts#update"
   post "posts/:id/destroy" => "posts#destroy"
   
+  post "posts/:post_id/comment" => "comments#create", as: :post_comment
+
+  resources :users, :posts
+
   get "/" => "home#top"
   get "about" => "home#about"
 end
