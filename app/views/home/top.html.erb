@@ -16,95 +16,32 @@
   <h3>新着</h3>
   <h4>もっと見る</h4>
 </div>
-<div class="card-design">
-  <section class="card">
-    <img class="card-img" src="http://webcreatorbox.com/sample/images/bear.jpg" alt="">
-    <div class="card-content">
-      <h1 class="card-title">タイトル</h1>
-      <p class="card-text">本文</p>
+<div class="main-posts-index">
+  <div class="container uk-flex uk-flex-around uk-flex-wrap-between uk-flex-wrap">
+    <% @posts.each do |post| %>
+    <div class="uk-flex">
+      <div class="card uk-card uk-card-small uk-card-default">
+        <% if post.image.attached? %>
+        <div class="card-img">
+          <div class="uk-card-media-top uk-text-center">
+            <%= image_tag url_for(post.image)%>
+          </div>
+        </div>
+      <% end %>
+      <div class="card-content">
+        <div class="card-title">
+          <%= link_to(post.title, "/posts/#{post.id}") %>
+        </div>
+        <div class="card-text">
+          <%= post.content %>
+        </div>
+      </div>
+      <% if post.category.present? %>
+        <div class="card-link">
+          <%= t("post.categories.#{post.category}") %>
+        </div>
+      <% end %>
     </div>
-    <div class="card-link">
-      <a>About</a>
-      <a>Website</a>
-    </div>
-  </section>
-  <section class="card">
-    <img class="card-img" src="http://webcreatorbox.com/sample/images/bear.jpg" alt="">
-    <div class="card-content">
-      <h1 class="card-title">タイトル2</h1>
-      <p class="card-text">本文</p>
-    </div>
-    <div class="card-link">
-      <a>About</a>
-      <a>Website</a>
-    </div>
-  </section>
-  <section class="card">
-    <img class="card-img" src="http://webcreatorbox.com/sample/images/bear.jpg" alt="">
-    <div class="card-content">
-      <h1 class="card-title">タイトル3</h1>
-      <p class="card-text">本文</p>
-    </div>
-    <div class="card-link">
-      <a>About</a>
-      <a>Website</a>
-    </div>
-  </section>
-  <section class="card">
-    <img class="card-img" src="http://webcreatorbox.com/sample/images/bear.jpg" alt="">
-    <div class="card-content">
-      <h1 class="card-title">タイトル4</h1>
-      <p class="card-text">本文</p>
-    </div>
-    <div class="card-link">
-      <a>About</a>
-      <a>Website</a>
-    </div>
-  </section>
-</div>
-<div class="card-design">
-  <section class="card">
-    <img class="card-img" src="http://webcreatorbox.com/sample/images/bear.jpg" alt="">
-    <div class="card-content">
-      <h1 class="card-title">タイトル5</h1>
-      <p class="card-text">本文</p>
-    </div>
-    <div class="card-link">
-      <a>About</a>
-      <a>Website</a>
-    </div>
-  </section>
-  <section class="card">
-    <img class="card-img" src="http://webcreatorbox.com/sample/images/bear.jpg" alt="">
-    <div class="card-content">
-      <h1 class="card-title">タイトル6</h1>
-      <p class="card-text">本文</p>
-    </div>
-    <div class="card-link">
-      <a>About</a>
-      <a>Website</a>
-    </div>
-  </section>
-  <section class="card">
-    <img class="card-img" src="http://webcreatorbox.com/sample/images/bear.jpg" alt="">
-    <div class="card-content">
-      <h1 class="card-title">タイトル7</h1>
-      <p class="card-text">本文</p>
-    </div>
-    <div class="card-link">
-      <a>About</a>
-      <a>Website</a>
-    </div>
-  </section>
-  <section class="card">
-    <img class="card-img" src="http://webcreatorbox.com/sample/images/bear.jpg" alt="">
-    <div class="card-content">
-      <h1 class="card-title">タイトル8</h1>
-      <p class="card-text">本文</p>
-    </div>
-    <div class="card-link">
-      <a>About</a>
-      <a>Website</a>
-    </div>
-  </section>
+  </div>
+  <% end %>
 </div>
