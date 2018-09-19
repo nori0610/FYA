@@ -40,8 +40,6 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'bcrypt'
 
-gem 'bulma-rails'
-
 gem "mini_magick"
 gem "refile", require: ["refile/rails", "refile/image_processing"]
 
